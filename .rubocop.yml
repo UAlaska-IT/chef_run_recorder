@@ -1,0 +1,9 @@
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.4.1
+LineLength:
+  Max: 120 # Default is 80
+Style/WordArray:
+  EnforcedStyle: brackets
+Style/SymbolArray:
+  EnforcedStyle: brackets
