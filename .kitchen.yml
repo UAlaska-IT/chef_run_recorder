@@ -1,0 +1,27 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+  require_chef_omnibus: 13.6.4
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-16.04
+  - name: centos-7
+  - name: mwrock/Windows2016
+    transport:
+      name: winrm
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chef_run_recorder::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
