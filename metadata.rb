@@ -9,7 +9,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 issues_url 'https://github.alaska.edu/oit-cookbooks/chef_run_recorder/issues' if respond_to?(:issues_url)
 source_url 'https://github.alaska.edu/oit-cookbooks/chef_run_recorder' if respond_to?(:source_url)
 
-version '1.0.0'
+version '0.1.0'
 
 ['windows', 'amazon', 'centos', 'debian', 'oracle', 'redhat', 'scientific', 'ubuntu'].each do |os|
   supports os
