@@ -45,10 +45,8 @@ module ChefRunRecorder
     end
 
     def write_exception
-      unless run_status.success?
-        File.open(path_to_last_run_exception, 'w') do |file|
-          file.write run_status.exception
-        end
+      File.open(path_to_last_run_exception, 'w') do |file|
+        file.write run_status.exception unless run_status.success?
       end
     end
   end
