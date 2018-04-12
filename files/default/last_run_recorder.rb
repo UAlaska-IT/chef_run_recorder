@@ -34,12 +34,20 @@ module ChefRunRecorder
     end
 
     def write_last_run_flag
-      File.open(path_to_last_run_node_name, 'w') do |file|
+      File.open(path_to_last_run_success_flag, 'w') do |file|
         file.write
         if run_status.success?
           'true'
         else
           'false'
+        end
+      end
+    end
+
+    def write_exception
+      unless run_status.success?
+        File.open(path_to_last_run_exception, 'w') do |file|
+          file.write run_status.exception
         end
       end
     end
@@ -51,6 +59,7 @@ module ChefRunRecorder
       write_run_time
       write_node_name
       write_last_run_flag
+      write_exception
     end
   end
 end
