@@ -14,6 +14,10 @@ module ChefRunRecorder
     def path_to_last_run_success_flag
       return ::File.join(Chef::Config[:file_cache_path], 'last_chef_run_success_flag.rb')
     end
+
+    def path_to_last_run_exception
+      return ::File.join(Chef::Config[:file_cache_path], 'last_chef_run_exception.rb')
+    end
   end
 end
 
