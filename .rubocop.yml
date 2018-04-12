@@ -3,7 +3,9 @@ AllCops:
   TargetRubyVersion: 2.4.1
 LineLength:
   Max: 120 # Default is 80
-Style/WordArray:
-  EnforcedStyle: brackets
+RedundantReturn:
+  Enabled: false
 Style/SymbolArray:
+  EnforcedStyle: brackets
+Style/WordArray:
   EnforcedStyle: brackets
