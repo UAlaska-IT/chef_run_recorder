@@ -7,7 +7,7 @@ if Chef::Config[:why_run]
 end
 
 # Write the handler code to the file system
-cookbook_file ::File.join(node['chef_handler']['handler_path'], 'last_run_recorder.rb') do
+cookbook_file path_to_handler do
   source 'last_run_recorder.rb'
   owner 'root'
   group 'root'
@@ -16,7 +16,7 @@ end
 
 # Enable report handler
 chef_handler 'ChefRunRecorder::LastRunRecorder' do
-  source ::File.join(node['chef_handler']['handler_path'], 'last_run_recorder.rb')
+  source path_to_handler
   supports report: true
   action :enable
 end
