@@ -6,6 +6,13 @@ if Chef::Config[:why_run]
   return
 end
 
+# add a chef-handler that creates a file with the current timestamp on a successful chef-run
+directory path_to_handler_directory do
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
+
 # Write the handler code to the file system
 cookbook_file path_to_handler do
   source 'last_run_recorder.rb'
