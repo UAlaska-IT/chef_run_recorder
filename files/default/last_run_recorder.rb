@@ -17,19 +17,19 @@ module ChefRunRecorder
     end
 
     def path_to_last_run_time
-      return ::File.join(path_to_record_directory, 'last_chef_run_time.rb')
+      return ::File.join(path_to_record_directory, 'last_chef_run_time')
     end
 
     def path_to_last_run_node_name
-      return ::File.join(path_to_record_directory, 'last_chef_run_node_name.rb')
+      return ::File.join(path_to_record_directory, 'last_chef_run_node_name')
     end
 
     def path_to_last_run_success_flag
-      return ::File.join(path_to_record_directory, 'last_chef_run_success_flag.rb')
+      return ::File.join(path_to_record_directory, 'last_chef_run_success_flag')
     end
 
     def path_to_last_run_exception
-      return ::File.join(path_to_record_directory, 'last_chef_run_exception.rb')
+      return ::File.join(path_to_record_directory, 'last_chef_run_exception')
     end
 
     def log_record_location
