@@ -3,8 +3,19 @@
 require 'chef/handler'
 
 module ChefRunRecorder
-  # It would be wonderful to use shared code, but these paths are redundant, so must be the same as in cookbook helpers
-  module Helper
+  # A handler to cache run info for monitoring, MOTD, and ???
+  class LastRunRecorder < Chef::Handler
+    # It would be wonderful to use shared code, but these paths are redundant
+    # MUST be the same as in cookbook helpers
+
+    private
+
+    TCB = 'chef_run_recorder'
+
+    def path_to_record_directory
+      return '/opt/chef/run_record'
+    end
+
     def path_to_last_run_time
       return ::File.join(Chef::Config[:file_cache_path], 'last_chef_run_time.rb')
     end
@@ -21,6 +32,10 @@ module ChefRunRecorder
       return ::File.join(Chef::Config[:file_cache_path], 'last_chef_run_exception.rb')
     end
 
+    def log_record_location
+      puts "Recording Chef run in directory '#{path_to_record_directory}'"
+    end
+
     def write_run_time
       File.open(path_to_last_run_time, 'w') do |file|
         file.write Time.now.to_i
@@ -35,11 +50,10 @@ module ChefRunRecorder
 
     def write_last_run_flag
       File.open(path_to_last_run_success_flag, 'w') do |file|
-        file.write
         if run_status.success?
-          'true'
+          file.write 'true'
         else
-          'false'
+          file.write 'false'
         end
       end
     end
