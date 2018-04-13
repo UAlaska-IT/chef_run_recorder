@@ -27,3 +27,10 @@ chef_handler 'ChefRunRecorder::LastRunRecorder' do
   supports report: true
   action :enable
 end
+
+# Make the directory for records here, because?
+directory path_to_record_directory do
+  owner 'root'
+  group 'root'
+  mode '0755'
+end
