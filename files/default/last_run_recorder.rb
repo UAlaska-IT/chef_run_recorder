@@ -60,14 +60,18 @@ module ChefRunRecorder
 
     def write_exception
       File.open(path_to_last_run_exception, 'w') do |file|
-        file.write run_status.exception unless run_status.success?
+        if run_status.success?
+          file.write 'none'
+        else
+          file.write run_status.exception
+        end
       end
     end
-  end
 
-  # A handler to cache run info for monitoring, MOTD, and ???
-  class LastRunRecorder < Chef::Handler
+    public
+
     def report
+      log_record_location
       write_run_time
       write_node_name
       write_last_run_flag
