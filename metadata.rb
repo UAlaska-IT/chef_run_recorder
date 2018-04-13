@@ -16,3 +16,5 @@ version '0.1.0'
 end
 
 chef_version '>= 13.0.0' if respond_to?(:chef_version)
+
+depends 'chef_handler', '>= 3.0.3'
