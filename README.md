@@ -22,14 +22,20 @@ This cookbook requires Chef 13+
 
 Supported Platform Families:
 
-* Windows
 * Linux
+* BSD
+* Windows
 
 Platforms validated via Test Kitchen:
 
-* Windows Server 2016
-* Ubuntu 16.04
-* CentOS 7.4
+* Ubuntu
+* Debian
+* RedHat
+* CentOS
+* Fedora
+* FreeBSD
+* Windows
+
 
 Notes:
 
