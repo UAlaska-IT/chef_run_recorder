@@ -17,9 +17,6 @@ platforms:
   - name: debian-9.4
   - name: debian-8.10
   - name: debian-7.11
-  - name: rhel-7.4
-  - name: rhel-6.9
-  - name: rhel-5.11
   - name: centos-7.4
   - name: centos-6.9
   - name: fedora-27

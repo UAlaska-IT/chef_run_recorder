@@ -30,12 +30,10 @@ Platforms validated via Test Kitchen:
 
 * Ubuntu
 * Debian
-* RedHat
 * CentOS
 * Fedora
 * FreeBSD
 * Windows
-
 
 Notes:
 
