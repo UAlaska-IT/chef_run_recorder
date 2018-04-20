@@ -4,13 +4,14 @@ __Maintainer: OIT Systems Engineering__ (<ua-oit-se@alaska.edu>)
 
 ## Purpose
 
-Adds a chef-handler that creates three files that record the state of the last run.
+Adds a chef-handler that creates files that record the state of the last run.
+These files are intended to be easily discovered and used by external scripts, e.g. Message of the Day, and so have simple formats.
+Most files contain a single string.
 
 1. Node name
-1. Current timestamp
-1. Success flag
-
-These files are intended to be easily discovered and used by external scripts, e.g. Message of the Day.
+1. Current timestamp, a single integer representing seconds since epoch
+1. Success flag, either 'true' or 'false'
+1. Exception text, or 'none' for success
 
 ## Requirements
 
