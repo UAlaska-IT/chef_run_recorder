@@ -11,7 +11,6 @@ directory path_to_handler_directory do
   owner root_user
   group root_group
   mode '0755'
-  recursive true
 end
 
 # Write the handler code to the file system
@@ -34,4 +33,5 @@ directory path_to_record_directory do
   owner root_user
   group root_group
   mode '0755'
+  recursive true
 end
