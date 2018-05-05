@@ -17,10 +17,14 @@ platforms:
   - name: ubuntu-16.04-i386
   - name: ubuntu-14.04
   - name: ubuntu-14.04-i386
+  - name: ubuntu-12.04 # Chef 13 dropped support
+  - name: ubuntu-12.04-i386 # Chef 13 dropped support
   - name: debian-9.4
   - name: debian-9.4-i386
   - name: debian-8.10
   - name: debian-8.10-i386
+  - name: debian-7.11 # Ruby requires GLIBC
+  - name: debian-7.11-i386 # Ruby requires GLIBC
   - name: centos-7.4
   - name: centos-6.9
   - name: centos-6.9-i386
@@ -35,7 +39,9 @@ platforms:
   - name: fedora-26
   - name: opensuse-leap-42.3
   - name: freebsd-11.1
+  - name: freebsd-11.1-i386 # Chef install fails
   - name: freebsd-10.4
+  - name: freebsd-10.4-i386 # Box does not exist
   - name: mwrock/Windows2016
     transport:
       name: winrm
