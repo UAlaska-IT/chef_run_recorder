@@ -22,4 +22,7 @@ Berksfile.lock
 Policyfile.lock.json
 
 # JetBrains
-.idea/*
+.idea/
+
+# Mac junk
+.DS_STORE
