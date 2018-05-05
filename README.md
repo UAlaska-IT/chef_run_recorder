@@ -32,7 +32,9 @@ Platforms validated via Test Kitchen:
 * Ubuntu
 * Debian
 * CentOS
+* Oracle
 * Fedora
+* OpenSuse
 * FreeBSD
 * Windows
 
