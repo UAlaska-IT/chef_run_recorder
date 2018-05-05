@@ -35,7 +35,6 @@ platforms:
   - name: fedora-26
   - name: opensuse-leap-42.3
   - name: freebsd-11.1
-  - name: freebsd-11.1-i386
   - name: freebsd-10.4
   - name: mwrock/Windows2016
     transport:
@@ -95,7 +94,6 @@ suites:
     includes:
       - opensuse-leap-42.3
       - freebsd-11.1
-      - freebsd-11.1-i386
       - freebsd-10.4
       - mwrock/Windows2016
       - mwrock/Windows2012R2
