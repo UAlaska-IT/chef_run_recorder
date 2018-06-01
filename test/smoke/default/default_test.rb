@@ -6,7 +6,7 @@ root_user = if os[:family] == 'windows'
               'root'
             end
 
-root_group = if os[:family] == 'freebsd'
+root_group = if os[:name ] == 'freebsd'
                'wheel'
              elsif os[:family] == 'windows'
                'SYSTEM'
