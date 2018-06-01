@@ -12,7 +12,7 @@ provisioner:
 verifier:
   name: inspec
 
-# Every bento box supported by Chef 13
+# Every bento box supported by Chef 14
 platforms:
   - name: ubuntu-18.04
   - name: ubuntu-16.04
@@ -87,13 +87,13 @@ suites:
       - centos-7.4
       - centos-6.9
       - centos-6.9-i386
-      - centos-5.11
-      - centos-5.11-i386
+      #- centos-5.11 # Chef 14 dropped support
+      #- centos-5.11-i386 # Chef 14 dropped support
       - oracle-7.4
       - oracle-6.9
       - oracle-6.9-i386
-      - oracle-5.11
-      - oracle-5.11-i386
+      #- oracle-5.11 # Chef 14 dropped support
+      #- oracle-5.11-i386 # Chef 14 dropped support
       - fedora-27
       - fedora-26
   - name: all-others
