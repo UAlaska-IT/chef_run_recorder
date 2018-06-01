@@ -39,11 +39,13 @@ platforms:
   - name: oracle-5.11-i386
   - name: fedora-27
   - name: fedora-26
+  - name: stakahashi/amazonlinux2
+  - name: realreadme/amazon2016.09
   - name: opensuse-leap-42.3
   - name: freebsd-11.1
-  - name: freebsd-11.1-i386 # Chef install fails
+  - name: freebsd-11.1-i386
   - name: freebsd-10.4
-  - name: freebsd-10.4-i386 # Box does not exist
+  - name: freebsd-10.4-i386
   - name: mwrock/Windows2016
     transport:
       name: winrm
@@ -104,9 +106,13 @@ suites:
         - test/smoke/default
     attributes:
     includes:
+      #- stakahashi/amazonlinux2 # Omnibus detection for Amazon 2 is currently broken
+      - realreadme/amazon2016.09
       - opensuse-leap-42.3
       - freebsd-11.1
+      #- freebsd-11.1-i386 # Chef package not found
       - freebsd-10.4
+      #- freebsd-10.4-i386 # Box does not exist
       - mwrock/Windows2016
       - mwrock/Windows2012R2
       - opentable/win-2008r2-standard-amd64-nocm
