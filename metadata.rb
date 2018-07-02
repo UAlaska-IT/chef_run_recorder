@@ -11,7 +11,7 @@ source_url 'https://github.alaska.edu/oit-cookbooks/chef_run_recorder' if respon
 
 version '0.2.0'
 
-['ubuntu', 'debian', 'redhat', 'amazon', 'centos', 'oracle', 'scientific', 'fedora', 'suse', 'opensuse', 'freebsd', 'windows'].each do |os|
+['ubuntu', 'debian', 'redhat', 'centos', 'oracle', 'amazon', 'scientific', 'fedora', 'suse', 'opensuse', 'freebsd', 'windows'].each do |os|
   supports os
 end
 
