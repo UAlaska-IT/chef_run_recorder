@@ -53,7 +53,7 @@ platforms:
   - name: mwrock/Windows2012R2
     transport:
       name: winrm
-  - name: opentable/win-2008r2-standard-amd64-nocm
+  - name: salesforce/server2008r2
     transport:
       name: winrm
 
@@ -117,4 +117,4 @@ suites:
       #- freebsd-10.4-i386 # Box does not exist
       - mwrock/Windows2016
       - mwrock/Windows2012R2
-      - opentable/win-2008r2-standard-amd64-nocm
+      - salesforce/server2008r2
