@@ -105,3 +105,6 @@ Strainerfile
 ###########
 .vagrant
 Vagrantfile
+
+# JetBrains
+.idea
