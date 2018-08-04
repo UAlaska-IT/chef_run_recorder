@@ -5,6 +5,19 @@
 \#*#
 .*.sw[a-z]
 *.un~
+pkg/
+
+# Ignore OS X System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Berkshelf
+/cookbooks
 
 # Bundler
 Gemfile.lock
@@ -22,7 +35,4 @@ Berksfile.lock
 Policyfile.lock.json
 
 # JetBrains
-.idea/
-
-# Mac junk
-.DS_STORE
+.idea/*

@@ -5,50 +5,55 @@ driver:
 provisioner:
   name: chef_zero
   always_update_cookbooks: true
-  require_chef_omnibus: 13.6.4
+  product_name: chef
+  product_version: 14.2.0
+  install_strategy: always
 
 verifier:
   name: inspec
 
-# Every bento box supported by Chef 13
+# Every bento box supported by Chef 14
 platforms:
   - name: ubuntu-18.04
   - name: ubuntu-16.04
   - name: ubuntu-16.04-i386
   - name: ubuntu-14.04
   - name: ubuntu-14.04-i386
-  - name: ubuntu-12.04 # Chef 13 dropped support
-  - name: ubuntu-12.04-i386 # Chef 13 dropped support
+  - name: ubuntu-12.04
+  - name: ubuntu-12.04-i386
   - name: debian-9.4
   - name: debian-9.4-i386
   - name: debian-8.10
   - name: debian-8.10-i386
-  - name: debian-7.11 # Ruby requires GLIBC
-  - name: debian-7.11-i386 # Ruby requires GLIBC
-  - name: centos-7.4
+  - name: debian-7.11
+  - name: debian-7.11-i386
+  - name: centos-7.5
   - name: centos-6.9
   - name: centos-6.9-i386
   - name: centos-5.11
   - name: centos-5.11-i386
-  - name: oracle-7.4
+  - name: oracle-7.5
   - name: oracle-6.9
   - name: oracle-6.9-i386
   - name: oracle-5.11
   - name: oracle-5.11-i386
+  - name: fedora-28
   - name: fedora-27
   - name: fedora-26
+  - name: stakahashi/amazonlinux2
+  - name: realreadme/amazon2016.09
   - name: opensuse-leap-42.3
   - name: freebsd-11.1
-  - name: freebsd-11.1-i386 # Chef install fails
+  - name: freebsd-11.1-i386
   - name: freebsd-10.4
-  - name: freebsd-10.4-i386 # Box does not exist
+  - name: freebsd-10.4-i386
   - name: mwrock/Windows2016
     transport:
       name: winrm
-  - name: mwrock/Windows2012R2
+  - name: a-mcf/Win2012R2-WMF5-min
     transport:
       name: winrm
-  - name: opentable/win-2008r2-standard-amd64-nocm
+  - name: salesforce/server2008r2
     transport:
       name: winrm
 
@@ -66,10 +71,14 @@ suites:
       - ubuntu-16.04-i386
       - ubuntu-14.04
       - ubuntu-14.04-i386
+      #- ubuntu-12.04 # Chef 13 dropped support
+      #- ubuntu-12.04-i386 # Chef 13 dropped support
       - debian-9.4
       - debian-9.4-i386
       - debian-8.10
       - debian-8.10-i386
+      #- debian-7.11 # Ruby requires GLIBC
+      #- debian-7.11-i386 # Ruby requires GLIBC
   - name: rhel-based
     run_list:
       - recipe[chef_run_recorder::default]
@@ -78,16 +87,17 @@ suites:
         - test/smoke/default
     attributes:
     includes:
-      - centos-7.4
+      - centos-7.5
       - centos-6.9
       - centos-6.9-i386
-      - centos-5.11
-      - centos-5.11-i386
-      - oracle-7.4
+      #- centos-5.11 # Chef 14 dropped support
+      #- centos-5.11-i386 # Chef 14 dropped support
+      - oracle-7.5
       - oracle-6.9
       - oracle-6.9-i386
-      - oracle-5.11
-      - oracle-5.11-i386
+      #- oracle-5.11 # Chef 14 dropped support
+      #- oracle-5.11-i386 # Chef 14 dropped support
+      - fedora-28
       - fedora-27
       - fedora-26
   - name: all-others
@@ -98,9 +108,13 @@ suites:
         - test/smoke/default
     attributes:
     includes:
+      #- stakahashi/amazonlinux2 # Omnibus detection for Amazon 2 is currently broken
+      - realreadme/amazon2016.09
       - opensuse-leap-42.3
       - freebsd-11.1
+      #- freebsd-11.1-i386 # Chef package not found
       - freebsd-10.4
+      #- freebsd-10.4-i386 # Box does not exist
       - mwrock/Windows2016
-      - mwrock/Windows2012R2
-      - opentable/win-2008r2-standard-amd64-nocm
+      - a-mcf/Win2012R2-WMF5-min
+      - salesforce/server2008r2

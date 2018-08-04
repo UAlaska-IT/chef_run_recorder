@@ -23,7 +23,11 @@ This cookbook requires Chef 13+
 
 Supported Platform Families:
 
-* Linux
+* Debian
+  * Ubuntu, Mint
+* Red Hat Enterprise Linux
+  * Amazon, CentOS, Oracle, Scientific
+* OpenSuse
 * BSD
 * Windows
 
