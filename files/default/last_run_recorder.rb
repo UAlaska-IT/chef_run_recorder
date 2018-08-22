@@ -32,6 +32,10 @@ module ChefRunRecorder
       return ::File.join(path_to_record_directory, 'last_chef_run_exception')
     end
 
+    def path_to_last_run_node
+      return ::File.join(path_to_record_directory, 'last_chef_run_node.json')
+    end
+
     def log_record_location
       puts "Recording Chef run in directory '#{path_to_record_directory}'"
     end
