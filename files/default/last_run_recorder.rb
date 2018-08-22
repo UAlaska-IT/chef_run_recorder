@@ -72,6 +72,13 @@ module ChefRunRecorder
       end
     end
 
+    def write_attributes
+      # Wonky work around for attributes as of InSpec 2.1
+      File.open(path_to_last_run_node, 'w') do |file|
+        file.write node.to_json
+      end
+    end
+
     public
 
     def report
@@ -80,6 +87,7 @@ module ChefRunRecorder
       write_node_name
       write_last_run_flag
       write_exception
+      write_attributes
     end
   end
 end
