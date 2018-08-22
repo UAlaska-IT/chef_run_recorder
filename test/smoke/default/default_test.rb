@@ -41,25 +41,25 @@ describe file('/opt/chef/run_record/last_chef_run_exception') do
 end
 
 if os[:family] != 'windows'
-  describe file('/opt/chef/run_record/last_chef_run_time'), unless: os[:family] == 'windows' do
+  describe file('/opt/chef/run_record/last_chef_run_time') do
     it { should be_mode 0o644 }
     it { should be_owned_by root_user }
     it { should be_grouped_into root_group }
   end
 
-  describe file('/opt/chef/run_record/last_chef_run_node_name'), unless: os[:family] == 'windows' do
+  describe file('/opt/chef/run_record/last_chef_run_node_name') do
     it { should be_mode 0o644 }
     it { should be_owned_by root_user }
     it { should be_grouped_into root_group }
   end
 
-  describe file('/opt/chef/run_record/last_chef_run_success_flag'), unless: os[:family] == 'windows' do
+  describe file('/opt/chef/run_record/last_chef_run_success_flag') do
     it { should be_mode 0o644 }
     it { should be_owned_by root_user }
     it { should be_grouped_into root_group }
   end
 
-  describe file('/opt/chef/run_record/last_chef_run_exception'), unless: os[:family] == 'windows' do
+  describe file('/opt/chef/run_record/last_chef_run_exception') do
     it { should be_mode 0o644 }
     it { should be_owned_by root_user }
     it { should be_grouped_into root_group }
