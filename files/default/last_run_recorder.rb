@@ -32,6 +32,10 @@ module ChefRunRecorder
       return ::File.join(path_to_record_directory, 'last_chef_run_exception')
     end
 
+    def path_to_last_run_node
+      return ::File.join(path_to_record_directory, 'last_chef_run_node.json')
+    end
+
     def log_record_location
       puts "Recording Chef run in directory '#{path_to_record_directory}'"
     end
@@ -68,6 +72,13 @@ module ChefRunRecorder
       end
     end
 
+    def write_attributes
+      # Wonky work around for attributes as of InSpec 2.1
+      File.open(path_to_last_run_node, 'w') do |file|
+        file.write node.to_json
+      end
+    end
+
     public
 
     def report
@@ -76,6 +87,7 @@ module ChefRunRecorder
       write_node_name
       write_last_run_flag
       write_exception
+      write_attributes
     end
   end
 end

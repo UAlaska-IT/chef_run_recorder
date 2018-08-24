@@ -4,14 +4,15 @@ __Maintainer: OIT Systems Engineering__ (<ua-oit-se@alaska.edu>)
 
 ## Purpose
 
-Adds a chef-handler that creates files that record the state of the last run.
+Adds a chef-handler that creates files that record the result of the last run.
 These files are intended to be easily discovered and used by external scripts, e.g. Message of the Day, and so have simple formats.
 Most files contain a single string.
 
-1. Node name
-1. Current timestamp, a single integer representing seconds since epoch
-1. Success flag, either 'true' or 'false'
-1. Exception text, or 'none' for success
+1. `/opt/chef/run_record/last_chef_run_node_name`: Node name
+1. `/opt/chef/run_record/last_chef_run_time`: Current timestamp, a single integer representing seconds since epoch
+1. `/opt/chef/run_record/last_chef_run_success_flag`: Success flag, either 'true' or 'false'
+1. `/opt/chef/run_record/last_chef_run_exception`: Exception text, or 'none' for success
+1. `/opt/chef/run_record/last_chef_run_node.json`: The Json representation of the node object
 
 ## Requirements
 

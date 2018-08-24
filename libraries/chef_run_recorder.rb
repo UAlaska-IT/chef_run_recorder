@@ -46,8 +46,13 @@ module ChefRunRecorder
     def path_to_last_run_exception
       return ::File.join(path_to_record_directory, 'last_chef_run_exception')
     end
+
+    def path_to_last_run_node
+      return ::File.join(path_to_record_directory, 'last_chef_run_node.json')
+    end
   end
 end
 
+Chef::Provider.include(ChefRunRecorder::Helper)
 Chef::Recipe.include(ChefRunRecorder::Helper)
 Chef::Resource.include(ChefRunRecorder::Helper)
