@@ -47,6 +47,10 @@ Notes:
 
 * This cookbook should support any recent Windows or Linux variant.
 
+### Dependencies
+
+This cookbook does not constrain its dependencies because it is intended as a utility library.  It should ultimately be used within a wrapper cookbook.
+
 ## Resources
 
 This cookbook provides no custom resources.
