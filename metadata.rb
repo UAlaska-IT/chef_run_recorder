@@ -11,8 +11,16 @@ source_url 'https://github.com/ualaska-it/chef_run_recorder' if respond_to?(:sou
 
 version '0.3.1'
 
-['ubuntu', 'debian', 'redhat', 'centos', 'oracle', 'amazon', 'scientific', 'fedora', 'suse', 'opensuse', 'freebsd', 'windows'].each do |os|
-  supports os
-end
+supports 'ubuntu', '>= 14'
+supports 'debian', '>= 8'
+supports 'redhat', '>= 6'
+supports 'centos', '>= 6'
+supports 'oracle', '>= 6'
+supports 'fedora'
+supports 'amazon', '< 2'
+supports 'suse'
+supports 'opensuse'
+supports 'freebsd', '>= 10'
+supports 'windows', '>= 6.1' # Windows 2008R2 or 7, see https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
 
 chef_version '>= 13.0.0' if respond_to?(:chef_version)

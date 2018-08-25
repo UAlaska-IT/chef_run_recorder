@@ -27,7 +27,7 @@ Supported Platform Families:
 * Debian
   * Ubuntu, Mint
 * Red Hat Enterprise Linux
-  * Amazon, CentOS, Oracle, Scientific
+  * Amazon, CentOS, Oracle
 * OpenSuse
 * BSD
 * Windows
