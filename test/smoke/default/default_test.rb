@@ -38,6 +38,9 @@ end
 describe file('/opt/chef/run_record/last_chef_run_exception') do
   it { should exist }
   it { should be_file }
+  its(:content) do
+    should match(/none/)
+  end
 end
 
 describe file('/opt/chef/run_record/last_chef_run_node.json') do
