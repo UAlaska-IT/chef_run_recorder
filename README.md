@@ -1,5 +1,8 @@
 # Chef Run Recorder Cookbook
 
+[![License](https://img.shields.io/github/license/ualaska-it/chef_run_recorder.svg)](https://github.com/ualaska-it/chef_run_recorder)
+[![GitHub Tag](https://img.shields.io/github/tag/ualaska-it/chef_run_recorder.svg)](https://github.com/ualaska-it/chef_run_recorder)
+
 __Maintainer: OIT Systems Engineering__ (<ua-oit-se@alaska.edu>)
 
 ## Purpose
