@@ -39,6 +39,7 @@ Platforms validated via Test Kitchen:
 * CentOS
 * Oracle
 * Fedora
+* Amazon
 * OpenSuse
 * FreeBSD
 * Windows
@@ -64,3 +65,7 @@ This recipe adds the handler that records the Chef run.  The handler runs at the
 ## Examples
 
 This is an application cookbook; no custom resources are provided.  See recipes and attributes for details of what this cookbook does.
+
+## Development
+
+See CONTRIBUTING.md and TESTING.md.
