@@ -23,4 +23,4 @@ supports 'amazon'
 supports 'freebsd', '>= 10.0'
 supports 'windows', '>= 6.1' # Windows 2008R2 or 7, see https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
 
-chef_version '>= 13.0' if respond_to?(:chef_version)
+chef_version '>= 14.0' if respond_to?(:chef_version)

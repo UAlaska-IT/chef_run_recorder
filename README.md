@@ -21,7 +21,7 @@ Most files contain a single string.
 
 ### Chef
 
-This cookbook requires Chef 13+
+This cookbook requires Chef 14+
 
 ### Platforms
 
