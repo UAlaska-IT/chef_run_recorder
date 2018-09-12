@@ -65,7 +65,7 @@ suites:
       - recipe[chef_run_recorder::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
     includes:
       - ubuntu-18.04
@@ -86,7 +86,7 @@ suites:
       - recipe[chef_run_recorder::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
     includes:
       - centos-7.5
@@ -107,7 +107,7 @@ suites:
       - recipe[chef_run_recorder::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
     includes:
       - gbailey/amzn2
