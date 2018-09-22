@@ -6,7 +6,7 @@ provisioner:
   name: chef_zero
   always_update_cookbooks: true
   product_name: chef
-  product_version: 14.2.0
+  product_version: 14.4.56
   install_strategy: always
 
 verifier:
@@ -21,20 +21,20 @@ platforms:
   - name: ubuntu-14.04-i386
   - name: ubuntu-12.04
   - name: ubuntu-12.04-i386
-  - name: debian-9.4
-  - name: debian-9.4-i386
-  - name: debian-8.10
+  - name: debian-9.5
+  - name: debian-9.5-i386
+  - name: debian-8.11
   - name: debian-8.10-i386
   - name: debian-7.11
   - name: debian-7.11-i386
   - name: centos-7.5
-  - name: centos-6.9
-  - name: centos-6.9-i386
+  - name: centos-6.10
+  - name: centos-6.10-i386
   - name: centos-5.11
   - name: centos-5.11-i386
   - name: oracle-7.5
-  - name: oracle-6.9
-  - name: oracle-6.9-i386
+  - name: oracle-6.10
+  - name: oracle-6.10-i386
   - name: oracle-5.11
   - name: oracle-5.11-i386
   - name: fedora-28
@@ -43,9 +43,10 @@ platforms:
   - name: gbailey/amzn2 # 2018.08
   - name: stakahashi/amazonlinux2 # 2017.12
   - name: realreadme/amazon2016.09
+  - name: opensuse-leap-15.0
   - name: opensuse-leap-42.3
-  - name: freebsd-11.1
-  - name: freebsd-11.1-i386
+  - name: freebsd-11.2
+  - name: freebsd-11.2-i386
   - name: freebsd-10.4
   - name: freebsd-10.4-i386
   - name: mwrock/Windows2016
@@ -64,7 +65,7 @@ suites:
       - recipe[chef_run_recorder::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
     includes:
       - ubuntu-18.04
@@ -74,28 +75,28 @@ suites:
       - ubuntu-14.04-i386
       #- ubuntu-12.04 # Chef 13 dropped support
       #- ubuntu-12.04-i386 # Chef 13 dropped support
-      - debian-9.4
-      - debian-9.4-i386
-      - debian-8.10
-      - debian-8.10-i386
-      #- debian-7.11 # Ruby requires GLIBC
-      #- debian-7.11-i386 # Ruby requires GLIBC
+      - debian-9.5
+      #- debian-9.5-i386 # Chef 14.4 dropped support
+      - debian-8.11
+      #- debian-8.10-i386 # Chef 14.4 dropped support
+      #- debian-7.11 # Chef 14.4 dropped support
+      #- debian-7.11-i386 # Chef 14.4 dropped support
   - name: rhel-based
     run_list:
       - recipe[chef_run_recorder::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
     includes:
       - centos-7.5
-      - centos-6.9
-      - centos-6.9-i386
+      - centos-6.10
+      - centos-6.10-i386
       #- centos-5.11 # Chef 14 dropped support
       #- centos-5.11-i386 # Chef 14 dropped support
       - oracle-7.5
-      - oracle-6.9
-      - oracle-6.9-i386
+      - oracle-6.10
+      - oracle-6.10-i386
       #- oracle-5.11 # Chef 14 dropped support
       #- oracle-5.11-i386 # Chef 14 dropped support
       - fedora-28
@@ -106,15 +107,16 @@ suites:
       - recipe[chef_run_recorder::default]
     verifier:
       inspec_tests:
-        - test/smoke/default
+        - test/integration/default
     attributes:
     includes:
-      #- gbailey/amzn2 # Omnibus detection for Amazon 2 is currently broken
+      - gbailey/amzn2
       #- stakahashi/amazonlinux2 # Omnibus detection for Amazon 2 is currently broken
       - realreadme/amazon2016.09
-      - opensuse-leap-42.3
-      - freebsd-11.1
-      #- freebsd-11.1-i386 # Chef package not found
+      #- opensuse-leap-15.0 # VBox additions are broken
+      #- opensuse-leap-42.3 # Chef 14 install is broken
+      - freebsd-11.2
+      #- freebsd-11.2-i386 # Chef package not found
       - freebsd-10.4
       #- freebsd-10.4-i386 # Box does not exist
       - mwrock/Windows2016

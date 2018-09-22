@@ -1,5 +1,9 @@
 # Changelog for Chef Run Recorder Cookbook
 
+## 0.3.2
+
+* Added shields to ReadMe
+
 ## 0.3.1
 
 * Organizational changes to increase supermarket quality

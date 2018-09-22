@@ -1,5 +1,8 @@
 # Chef Run Recorder Cookbook
 
+[![License](https://img.shields.io/github/license/ualaska-it/chef_run_recorder.svg)](https://github.com/ualaska-it/chef_run_recorder)
+[![GitHub Tag](https://img.shields.io/github/tag/ualaska-it/chef_run_recorder.svg)](https://github.com/ualaska-it/chef_run_recorder)
+
 __Maintainer: OIT Systems Engineering__ (<ua-oit-se@alaska.edu>)
 
 ## Purpose
@@ -18,7 +21,7 @@ Most files contain a single string.
 
 ### Chef
 
-This cookbook requires Chef 13+
+This cookbook requires Chef 14+
 
 ### Platforms
 
@@ -39,6 +42,7 @@ Platforms validated via Test Kitchen:
 * CentOS
 * Oracle
 * Fedora
+* Amazon
 * OpenSuse
 * FreeBSD
 * Windows
@@ -64,3 +68,7 @@ This recipe adds the handler that records the Chef run.  The handler runs at the
 ## Examples
 
 This is an application cookbook; no custom resources are provided.  See recipes and attributes for details of what this cookbook does.
+
+## Development
+
+See CONTRIBUTING.md and TESTING.md.
