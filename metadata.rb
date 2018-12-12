@@ -9,7 +9,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 issues_url 'https://github.com/ualaska-it/chef_run_recorder/issues' if respond_to?(:issues_url)
 source_url 'https://github.com/ualaska-it/chef_run_recorder' if respond_to?(:source_url)
 
-version '0.3.2'
+version '0.3.3'
 
 supports 'ubuntu', '>= 14.0'
 supports 'debian', '>= 8.0'
