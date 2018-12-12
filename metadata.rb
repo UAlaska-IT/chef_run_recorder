@@ -6,8 +6,10 @@ maintainer_email 'ua-oit-se@alaska.edu'
 license 'MIT'
 description 'Records the outcome of the last Chef run, for consumption by monitoring, MOTD, etc.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-issues_url 'https://github.com/ualaska-it/chef_run_recorder/issues' if respond_to?(:issues_url)
-source_url 'https://github.com/ualaska-it/chef_run_recorder' if respond_to?(:source_url)
+
+git_url = 'https://github.com/ualaska-it/chef_run_recorder'
+source_url git_url if respond_to?(:source_url)
+issues_url "#{git_url}/issues" if respond_to?(:issues_url)
 
 version '0.3.3'
 
