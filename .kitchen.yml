@@ -33,18 +33,17 @@ platforms:
   - name: oracle-6.10-i386
   - name: oracle-5.11
   - name: oracle-5.11-i386
+  - name: fedora-29
   - name: fedora-28
-  - name: fedora-27
-  - name: fedora-26
   - name: gbailey/amzn2 # 2018.08
   - name: stakahashi/amazonlinux2 # 2017.12
   - name: realreadme/amazon2016.09
   - name: opensuse-leap-15.0
   - name: opensuse-leap-42.3
+  - name: freebsd-12.0
+  - name: freebsd-12.0-i386
   - name: freebsd-11.2
   - name: freebsd-11.2-i386
-  - name: freebsd-10.4
-  - name: freebsd-10.4-i386
   - name: mwrock/Windows2016
     transport:
       name: winrm
@@ -91,9 +90,8 @@ suites:
       - oracle-6.10-i386
       #- oracle-5.11 # Chef 14 dropped support
       #- oracle-5.11-i386 # Chef 14 dropped support
+      - fedora-29
       - fedora-28
-      - fedora-27
-      - fedora-26
   - name: all-others
     run_list:
       - recipe[chef_run_recorder::default]
@@ -107,10 +105,10 @@ suites:
       - realreadme/amazon2016.09
       #- opensuse-leap-15.0 # VBox additions are broken
       #- opensuse-leap-42.3 # Chef 14 install is broken
+      - freebsd-12.0
+      - freebsd-12.0-i386
       - freebsd-11.2
       #- freebsd-11.2-i386 # Chef package not found
-      - freebsd-10.4
-      #- freebsd-10.4-i386 # Box does not exist
       - mwrock/Windows2016
       - a-mcf/Win2012R2-WMF5-min
       - salesforce/server2008r2
