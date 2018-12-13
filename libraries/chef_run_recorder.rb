@@ -7,18 +7,22 @@ module ChefRunRecorder
 
     def root_user
       return 'SYSTEM' if node['platform_family'] == 'windows'
+
       return 'root'
     end
 
     def root_group
       return 'wheel' if node['platform_family'] == 'freebsd'
+
       return 'SYSTEM' if node['platform_family'] == 'windows'
+
       return 'root'
     end
 
     def path_to_handler_directory
       has_handler = node['chef_handler'] && node['chef_handler']['handler_path']
       return node['chef_handler']['handler_path'] if has_handler
+
       return ::File.join(Chef::Config[:file_cache_path], 'handlers')
     end
 
