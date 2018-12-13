@@ -35,7 +35,7 @@ platforms:
   - name: oracle-5.11-i386
   - name: fedora-28
   - name: fedora-27
-  - name: gbailey/amzn2 # 2018.08
+  - name: gbailey/amzn2 # 2018.11
   - name: stakahashi/amazonlinux2 # 2017.12
   - name: realreadme/amazon2016.09
   - name: opensuse-leap-15.0
@@ -102,7 +102,7 @@ suites:
         - test/integration/default
     attributes:
     includes:
-      - gbailey/amzn2
+      #- gbailey/amzn2 # Tests broken?
       #- stakahashi/amazonlinux2 # Omnibus detection for Amazon 2 is currently broken
       - realreadme/amazon2016.09
       #- opensuse-leap-15.0 # VBox additions are broken
