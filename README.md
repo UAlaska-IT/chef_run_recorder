@@ -32,7 +32,6 @@ Supported Platform Families:
 * Red Hat Enterprise Linux
   * Amazon, CentOS, Oracle
 * Suse
-* BSD
 * Windows
 
 Platforms validated via Test Kitchen:
