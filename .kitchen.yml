@@ -3,6 +3,13 @@ driver:
   name: ec2
   region: us-west-1
   instance_type: t2.micro
+  tags:
+    Name: Chef Run Recorder
+    Service: Infrastructure
+    Environment: Test
+    Fund: 103010
+    Org: 60412
+    Department: Systems Engineering
 
 provisioner:
   name: chef_zero
