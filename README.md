@@ -31,8 +31,7 @@ Supported Platform Families:
   * Ubuntu, Mint
 * Red Hat Enterprise Linux
   * Amazon, CentOS, Oracle
-* OpenSuse
-* BSD
+* Suse
 * Windows
 
 Platforms validated via Test Kitchen:
@@ -43,8 +42,7 @@ Platforms validated via Test Kitchen:
 * Oracle
 * Fedora
 * Amazon
-* OpenSuse
-* FreeBSD
+* Suse
 * Windows
 
 Notes:
@@ -53,7 +51,8 @@ Notes:
 
 ### Dependencies
 
-This cookbook does not constrain its dependencies because it is intended as a utility library.  It should ultimately be used within a wrapper cookbook.
+This cookbook does not constrain its dependencies because it is intended as a utility library.
+It should ultimately be used within a wrapper cookbook.
 
 ## Resources
 
@@ -63,7 +62,8 @@ This cookbook provides no custom resources.
 
 ### chef_run_recorder::default
 
-This recipe adds the handler that records the Chef run.  The handler runs at the end of the Chef run, so can be included early or late.
+This recipe adds the handler that records the Chef run.
+The handler runs at the end of the Chef run, so can be included early or late.
 
 ## Examples
 

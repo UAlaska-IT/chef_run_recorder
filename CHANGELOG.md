@@ -1,5 +1,9 @@
 # Changelog for Chef Run Recorder Cookbook
 
+## 0.3.4
+
+* Updated kitchen to use EC2
+
 ## 0.3.3
 
 * Updated kitchen platforms and platform support
