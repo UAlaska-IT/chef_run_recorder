@@ -1,5 +1,9 @@
 # Changelog for Chef Run Recorder Cookbook
 
+## 1.0.0
+
+* Updated AMI for Win 2019
+
 ## 0.3.4
 
 * Updated kitchen to use EC2
