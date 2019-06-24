@@ -34,7 +34,7 @@ platforms:
   - name: fedora-29
   - name: fedora-28
   - name: amazon2
-  - name: amazon-
+  - name: amazon2-2018
   - name: sles-15
   - name: windows-2019
     driver:
@@ -88,7 +88,7 @@ suites:
     attributes:
     includes:
       - amazon2
-      - amazon-
+      - amazon2-2018
       - sles-15
       - windows-2019
       - windows-2016
