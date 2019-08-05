@@ -1,15 +1,6 @@
 ---
 driver:
-  name: ec2
-  region: us-west-1
-  instance_type: t2.micro
-  tags:
-    Name: Chef Run Recorder
-    Service: Infrastructure
-    Environment: Test
-    Fund: 103010
-    Org: 60412
-    Department: Systems Engineering
+  name: vagrant
 
 provisioner:
   name: chef_zero
@@ -26,6 +17,7 @@ platforms:
   - name: ubuntu-16.04
   - name: ubuntu-14.04
   - name: debian-9
+  - name: debian-8
   - name: centos-7
   - name: centos-6
   - name: oracle-7.6
@@ -51,7 +43,7 @@ platforms:
       name: winrm
 
 suites:
-  - name: debian-based
+  - name: default
     run_list:
       - recipe[chef_run_recorder::default]
     verifier:
@@ -60,34 +52,5 @@ suites:
     attributes:
     includes:
       - ubuntu-18.04
-      - ubuntu-16.04
-      - ubuntu-14.04
-      - debian-9
-  - name: rhel-based
-    run_list:
-      - recipe[chef_run_recorder::default]
-    verifier:
-      inspec_tests:
-        - test/integration/default
-    attributes:
-    includes:
       - centos-7
-      - oracle-7.6
-      - oracle-6.10
-      - fedora-29
-      - fedora-28
-  - name: all-others
-    run_list:
-      - recipe[chef_run_recorder::default]
-    verifier:
-      inspec_tests:
-        - test/integration/default
-    attributes:
-    includes:
-      - amazon2
-      - amazon2-2018
-      - sles-15
       - windows-2019
-      - windows-2016
-      - windows-2012r2
-      - windows-2008r2sp1
