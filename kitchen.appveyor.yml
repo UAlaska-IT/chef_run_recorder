@@ -53,4 +53,3 @@ suites:
     includes:
       - ubuntu-18.04
       - centos-7
-      - windows-2019
