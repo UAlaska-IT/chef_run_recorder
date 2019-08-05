@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/github/license/ualaska-it/chef_run_recorder.svg)](https://github.com/ualaska-it/chef_run_recorder)
 [![GitHub Tag](https://img.shields.io/github/tag/ualaska-it/chef_run_recorder.svg)](https://github.com/ualaska-it/chef_run_recorder)
+[![Build status](https://ci.appveyor.com/api/projects/status/3hidycnkkn4y1aec/branch/master?svg=true)](https://ci.appveyor.com/project/UAlaska/chef-run-recorder/branch/master)
 
 __Maintainer: OIT Systems Engineering__ (<ua-oit-se@alaska.edu>)
 
