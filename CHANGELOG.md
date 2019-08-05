@@ -1,5 +1,9 @@
 # Changelog for Chef Run Recorder Cookbook
 
+## 1.0.1
+
+* Added Appveyor logic
+
 ## 1.0.0
 
 * Updated AMI for Win 2019
