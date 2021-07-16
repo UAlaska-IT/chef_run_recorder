@@ -8,11 +8,11 @@ install:
     wget "${chef_url}" -O "${chef_file}"
     sudo dpkg -i "${chef_file}"
   - |
-    vagrant_version='2.2.16'
-    vagrant_url="https://releases.hashicorp.com/vagrant/${vagrant_version}/vagrant_${vagrant_version}_x86_64.deb"
-    vagrant_file='vagrant.deb'
+    vagrant_version='2.2.17'
+    vagrant_url="https://releases.hashicorp.com/vagrant/${vagrant_version}/vagrant_${vagrant_version}_linux_amd64.zip"
+    vagrant_file='vagrant.zip'
     wget "${vagrant_url}" -O "${vagrant_file}"
-    sudo dpkg -i "${vagrant_file}"
+    sudo unzip -d /usr/local/bin "${vagrant_file}"
   - |
     sudo apt-get install make
 
