@@ -57,6 +57,5 @@ module ChefRunRecorder
   end
 end
 
-Chef::Provider.include(ChefRunRecorder::Helper)
-Chef::Recipe.include(ChefRunRecorder::Helper)
+Chef::DSL::Recipe.include(ChefRunRecorder::Helper)
 Chef::Resource.include(ChefRunRecorder::Helper)
