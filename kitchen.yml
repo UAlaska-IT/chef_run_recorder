@@ -41,20 +41,14 @@ platforms:
     driver:
       instance_type: t3a.medium
       retryable_tries: 120
-    transport:
-      username: Administrator
   - name: windows-2016
     driver:
       instance_type: t3a.medium
       retryable_tries: 120
-    transport:
-      username: Administrator
   - name: windows-2012r2
     driver:
       instance_type: t3a.medium
       retryable_tries: 120
-    transport:
-      username: Administrator
 
 suites:
   - name: debian-based
