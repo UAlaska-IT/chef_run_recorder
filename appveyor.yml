@@ -13,12 +13,14 @@ install:
     vagrant_file='vagrant.deb'
     wget "${vagrant_url}" -O "${vagrant_file}"
     sudo dpkg -i "${vagrant_file}"
+  - |
+    sudo apt-get install make
 
 build: off
 
 test_script:
   - CHEF_LICENSE="accept" chef exec rubocop
-  - foodcritic .
+  - make lint
   - berks install
   - chef exec rspec --fail-fast -fd
   - KITCHEN_YAML="kitchen.appveyor.yml" kitchen test --no-color --destroy=always
