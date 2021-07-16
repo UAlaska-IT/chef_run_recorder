@@ -2,7 +2,8 @@
 driver:
   name: ec2
   region: us-west-1
-  instance_type: t2.micro
+  instance_type: t3a.micro
+  skip_cost_warning: true
   tags:
     Name: Chef Run Recorder
     Service: Infrastructure
@@ -22,25 +23,38 @@ verifier:
   name: inspec
 
 platforms:
+  - name: ubuntu-20.04
   - name: ubuntu-18.04
-  - name: ubuntu-16.04
-  - name: ubuntu-14.04
-  - name: debian-9
-  - name: centos-7
-  - name: centos-6
-  - name: oracle-7.6
-  - name: oracle-6.10
-  - name: fedora-29
-  - name: fedora-28
+  - name: debian-10
+    driver:
+      image_search:
+        owner-id: 903794441882
+        name: '*debian-10-*'
+  - name: rhel-8
+  - name: rhel-7
+  - name: centos-8
+  - name: oracle-8
+  - name: fedora-33
   - name: amazon2
-  - name: amazon2-2018
   - name: sles-15
   - name: windows-2019
     driver:
-      image_id: ami-004a782f694e8dde2
+      instance_type: t3a.medium
+      retryable_tries: 120
+    transport:
+      username: Administrator
   - name: windows-2016
+    driver:
+      instance_type: t3a.medium
+      retryable_tries: 120
+    transport:
+      username: Administrator
   - name: windows-2012r2
-  - name: windows-2008r2sp1
+    driver:
+      instance_type: t3a.medium
+      retryable_tries: 120
+    transport:
+      username: Administrator
 
 suites:
   - name: debian-based
@@ -51,10 +65,9 @@ suites:
         - test/integration/default
     attributes:
     includes:
+      - ubuntu-20.04
       - ubuntu-18.04
-      - ubuntu-16.04
-      - ubuntu-14.04
-      - debian-9
+      - debian-10
   - name: rhel-based
     run_list:
       - recipe[chef_run_recorder::default]
@@ -63,12 +76,11 @@ suites:
         - test/integration/default
     attributes:
     includes:
-      - centos-7
-      - oracle-7.6
-      - oracle-6.10
-      - fedora-29
-      - fedora-28
-  - name: all-others
+      - rhel-8
+      - rhel-7
+      - centos-8
+      - oracle-8
+  - name: other-nix
     run_list:
       - recipe[chef_run_recorder::default]
     verifier:
@@ -76,10 +88,17 @@ suites:
         - test/integration/default
     attributes:
     includes:
+      - fedora-33
       - amazon2
-      - amazon2-2018
       - sles-15
+  - name: windows
+    run_list:
+      - recipe[chef_run_recorder::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+    includes:
       - windows-2019
       - windows-2016
       - windows-2012r2
-      - windows-2008r2sp1
