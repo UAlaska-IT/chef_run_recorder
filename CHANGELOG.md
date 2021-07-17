@@ -1,5 +1,9 @@
 # Changelog for Chef Run Recorder Cookbook
 
+## 1.0.2
+
+* Fix deprecation warnings in Chef 17
+
 ## 1.0.1
 
 * Added Appveyor logic

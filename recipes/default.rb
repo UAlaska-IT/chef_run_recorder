@@ -24,7 +24,6 @@ end
 # Enable report handler
 chef_handler 'ChefRunRecorder::LastRunRecorder' do
   source path_to_handler
-  supports report: true
   action :enable
 end
 

@@ -6,9 +6,10 @@ root_user = if os[:family] == 'windows'
               'root'
             end
 
-root_group = if os[:family] == 'bsd'
+root_group = case os[:family]
+             when 'bsd'
                'wheel'
-             elsif os[:family] == 'windows'
+             when 'windows'
                'SYSTEM'
              else
                'root'
@@ -31,7 +32,7 @@ describe file('/opt/chef/run_record/last_chef_run_success_flag') do
   it { should exist }
   it { should be_file }
   its(:content) do
-    should match(/[true|false]/)
+    should match(/[true|fals]/)
   end
 end
 
