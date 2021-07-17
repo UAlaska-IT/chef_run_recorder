@@ -82,7 +82,6 @@ suites:
         - test/integration/default
     attributes:
     includes:
-      - fedora-33
       - amazon2
       - sles-15
   - name: windows
