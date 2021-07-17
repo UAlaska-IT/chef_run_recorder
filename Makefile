@@ -3,6 +3,7 @@ SHELL := /bin/bash
 
 lint:
 	chef exec rubocop -A
+	cookstyle -A .
 	chef exec rubocop
 	cookstyle .
 
