@@ -6,7 +6,7 @@ provisioner:
   name: chef_zero
   always_update_cookbooks: true
   product_name: chef
-  product_version: 17.2.29
+  product_version: 17.1.35
   install_strategy: once
 
 verifier:
